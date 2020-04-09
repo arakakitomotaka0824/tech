@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>edit画面</h1>
+    <%= form_tag("/posts/#{@post.id}/update") do %>
+    <textarea name="content"><%= @post.content %></textarea>
+    <input type="submit">
+    <%end%>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<%= @post.id %>
+<%= @post.created_at %>
+<%= @post.content %>
+<%= link_to("edit","/posts/#{@post.id}/edit") %>
+<%= link_to("deleate","/posts/#{@post.id}/destroy",{method:"post"}) %>
+    
+</body>
+</html>
