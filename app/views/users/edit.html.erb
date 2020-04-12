@@ -1,0 +1,14 @@
+
+
+  <div>
+    <%= form_tag('/users/#{@user.id}/update') do %>
+      <h2>name</h2>
+       <input name="name" value="<%= @user.name %>">
+      <h2>email</h2>
+       <input name="email" value="<%= @user.email %>">
+       <input type="submit">
+    <% end %>
+
+
+
+  </div>

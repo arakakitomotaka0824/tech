@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<% provide(:title, 'Sign up') %>
 
+<div>
 <h1>投稿画面です</h1>
 <%= form_tag("/posts/create") do %>
   <h2>Title</h2>
@@ -15,7 +9,5 @@
   <textarea name="content"></textarea>
   <input type="submit">
   <%end%>
-
+</div>
     
-</body>
-</html>
