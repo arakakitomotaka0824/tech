@@ -19,6 +19,10 @@
     display: flex;
     padding: 80px 50px;
   }
+
+  ul {
+    list-style: none;
+  }
   
   
   .side {

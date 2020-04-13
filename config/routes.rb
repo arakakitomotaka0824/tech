@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   post  'users/create'      => 'users#create'
   get   'users/new'         => 'users#new'
   get   'users/index'       => 'users#index'
-  get   'users/:id'         => 'users#show'
+  
   post  'users/login'       => 'users#login'
   post  'users/logout'      => 'users#logout'
   get   'users/login'       => 'users#login_form'
-  
+  get   'users/:id'         => 'users#show'
   
 
   get   'posts/index'       => 'posts#index'

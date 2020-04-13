@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     @user = Member.find_by(email: params[:email],password: params[:password])
     if @user
       session[:user_id] = @user.id
-      redirect_to("/users/#{@user.id}")
+      redirect_to('/posts/index')
     else
       render('users/login_form')
     end
