@@ -13,7 +13,9 @@
        <% @posts.each do |post| %>
          <div>
             ---------------------<br>
-            <%= link_to(post.content,"/posts/#{post.id}") %> 
+
+            <%= link_to(post.title,"/posts/#{post.id}") %><br>
+            <%= post.content %> 
             
          </div>
          <%end%>

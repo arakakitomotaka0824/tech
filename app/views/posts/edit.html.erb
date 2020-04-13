@@ -8,6 +8,7 @@
 <body>
     <h1>edit画面</h1>
     <%= form_tag("/posts/#{@post.id}/update") do %>
+    <input name = "title" value="<%= @post.title %>">
     <textarea name="content"><%= @post.content %></textarea>
     <input type="submit">
     <%end%>

@@ -7,9 +7,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(content: params[:content])
-    @post.save
-    redirect_to("/posts/index")
+    @post = Post.new(title: params[:title],content: params[:content])
+     if @post.save
+          flash[:notice] = "post crear"
+          redirect_to("/posts/index")
+     else
+          render 'new'
+     end
   end
 
   def show
