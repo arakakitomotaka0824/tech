@@ -18,7 +18,8 @@ class UsersController < ApplicationController
     @user = Member.new(
       name: params[:name],
       email:params[:email],
-      password: params[:password]
+      password: params[:password],
+      image_name: "default_user.jpg"
     )
     if @user.save
       session[:user_id] = @user.id
@@ -37,6 +38,13 @@ class UsersController < ApplicationController
     @user = Member.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
+
+    if params[:image]
+      @user.image_name = "#{@user.id}.jpg"
+      image = params[:image]
+      File.binwrite("public/user_images/#{@user.image_name}", image.read)
+      
+    end
 
     if @user.save
       redirect_to("/users/#{@user.id}")

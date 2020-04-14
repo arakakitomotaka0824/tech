@@ -1,9 +1,10 @@
 
   
-  <div>
+  <div class = "user">
 
     <h1>
       Userの詳細画面<br>
+      <img src="<%= "/user_images/#{@user.image_name}" %>"><br>
       <%= @user.name %><br>
       <%= @user.email %>
     </h1>
