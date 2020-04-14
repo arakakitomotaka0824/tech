@@ -74,6 +74,11 @@ class UsersController < ApplicationController
     redirect_to("/users/login")
   end
 
+  def likes
+    @user = Member.find_by(id: params[:id])
+    @likes = Like.where(user_id: @user.id)
+  end
+
   def ensure_correct_user
     if @current_user.id != params[:id].to_i
       flash[:notice] = "権限がありません"
@@ -81,7 +86,7 @@ class UsersController < ApplicationController
     end
   end
 
-  
+
   
 
   
