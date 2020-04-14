@@ -13,7 +13,10 @@
        <% @posts.each do |post| %>
          <div>
             ---------------------<br>
+            <div>
+              <img src="<%= "/user_images/#{post.user.image_name}" %>">
 
+            </div>
             <%= link_to(post.title,"/posts/#{post.id}") %><br>
             <%= post.content %> 
             

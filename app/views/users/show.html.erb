@@ -11,4 +11,17 @@
 
     <%= link_to("user編集","/users/#{@user.id}/edit") %>
 
+    <% @user.posts.each do |post| %>
+     <div>
+        <div>
+          <img src="<%= "/user_images/#{post.user.image_name}" %>">
+        </div>
+        <div>
+          <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+        </div>
+          <%= link_to(post.title, "/posts/#{post.id}") %>
+          <%= post.content %>
+     </div>
+     <% end %>
+
   </div>
