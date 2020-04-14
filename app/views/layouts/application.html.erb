@@ -41,7 +41,7 @@
             <%= link_to("TweetAppとは", "/about") %>
           </li>
           <li>
-            <%= link_to("新規登録", "/users/signup") %>
+            <%= link_to("新規登録", "/users/new") %>
           </li>
           <li>
             <%= link_to("ログイン", "/users/login") %>
@@ -58,7 +58,9 @@
       
       <% if @current_user %>
         <ul>
-        <li>user_image</li>
+           <div class= "user">
+            <img src="<%= "/user_images/#{@current_user.image_name}" %>">
+            </div>
         <li>
             <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
         </li>
@@ -70,17 +72,25 @@
         <ul>
          <li> noimage </li>
          <li> guest </li>
-         
+          
         </ul>
         <% end %>
     </div>
   
 
-    <footer>
-    </footer>
-
+    
       <%= yield %>
     </div>
+    <footer class="footer">
+    <nav>
+    <ul>
+      <li><%= link_to "About", "/home/about" %></li>
+      <li><%= link_to "Contact", "/home/about" %></li>
+      <li><a href="http://news.railstutorial.org/">News</a></li>
+    </ul>
+    </nav>
+
+    </footer>
     </div>
   </body>
 

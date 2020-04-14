@@ -2,7 +2,8 @@
 
 
   <% @users.each do |user| %>
-   <div>
+   <div class ="user">
+    <img src="<%= "/user_images/#{user.image_name}" %>"><br>
     <%= link_to(user.name, "/users/#{user.id}") %><br>
     <%= user.email %>
     <p>-------------------------------</p>
