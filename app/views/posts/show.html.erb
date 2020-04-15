@@ -1,7 +1,8 @@
 
 <%= @post.id %>
 <div class = "post-time">
-<%= @post.created_at %>
+<%= @post.created_at.to_s(:datetime_jp) %><br>
+<%= time_ago_in_words(@post.created_at) %>ago
 </div>
 <%= @post.title %><br>
 <%= @post.content %><br>

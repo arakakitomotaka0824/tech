@@ -18,7 +18,9 @@
 
             </div>
             <%= link_to(post.title,"/posts/#{post.id}") %><br>
-            <%= post.content %> 
+            <%= post.content %> <br>
+            <%= post.created_at.to_s(:datetime_jp) %><br>
+            <%= time_ago_in_words(post.created_at) %>ago
             
          </div>
          <%end%>
