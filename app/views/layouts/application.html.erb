@@ -66,15 +66,15 @@
         <li>
             <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
         </li>
+        <section class="stats">
+        <%= render 'shared/stats' %>
+           </section>
         <li>
             <%= link_to("ログアウト", "/users/logout", {method: :post}) %>
           </li>
         <ul>
         
-        <section class="stats">
-        <%= render 'shared/stats' %>
-           </section>
-          
+        
         <% else %>
         <ul>
          <li> noimage </li>

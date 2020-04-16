@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   post  'likes/:post_id/create' => 'likes#create'
   post  'likes/:post_id/destroy'=> 'likes#destroy'
 
+  get   '/'                 => 'posts#index'
+
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users do

@@ -5,7 +5,8 @@
    <div class ="user">
     <img src="<%= "/user_images/#{user.image_name}" %>"><br>
     <%= link_to(user.name, "/users/#{user.id}") %><br>
-    <%= user.email %>
+    <%= user.email %><br>
+    投稿数<%= user.posts.count %>
     <p>-------------------------------</p>
     </div>
   <% end %>
