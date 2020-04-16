@@ -16,11 +16,7 @@ Rails.application.routes.draw do
   get   "users/:id/following" => "users#following"
 
 
-  resources :users do
-    member do
-      get :following, :followers
-    end
-  end
+  
   
 
   get   'posts/index'       => 'posts#index'
@@ -36,6 +32,11 @@ Rails.application.routes.draw do
 
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
 
   resources :relationships,       only: [:create, :destroy]

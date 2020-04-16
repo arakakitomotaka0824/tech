@@ -9,6 +9,8 @@
       <%= @user.email %>
     </h1>
 
+    <%= render 'follow_form' %>
+
     <%= link_to("user編集","/users/#{@user.id}/edit") %>
 
     <ul class="user-tabs">
