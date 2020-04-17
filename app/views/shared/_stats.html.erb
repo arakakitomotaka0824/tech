@@ -1,7 +1,7 @@
 
 <div class="stats">
   <%=link_to("following", "/users/#{@current_user.id}/following") %>
-  <%= @current_user.following.count %>
+  <%= @current_user.following.count %><br>
   <%=link_to("followers", "/users/#{@current_user.id}/followers") %>
-  <%= @current_user.followers.count %>
+  <%= @current_user.followers.count %><br>
 </div>

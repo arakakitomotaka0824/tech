@@ -57,10 +57,10 @@
     <div class="content">
     
     <div class="side">
-      
+      <div class = "side_content">
       <% if @current_user %>
         <ul>
-           <div class= "user">
+           <div class= "side_user">
             <img src="<%= "/user_images/#{@current_user.image_name}" %>">
             </div>
         <li>
@@ -82,6 +82,7 @@
           
         </ul>
         <% end %>
+        </div>
     </div>
   
       

@@ -1,13 +1,13 @@
 
   
   <div class = "user">
-
+    <div class ="user_show">
     <h1>
-      Userの詳細画面<br>
       <img src="<%= "/user_images/#{@user.image_name}" %>"><br>
       <%= @user.name %><br>
       <%= @user.email %>
     </h1>
+    </div>
 
     <%= render 'follow_form' %>
 　　<% if @current_user == @user %>
@@ -20,7 +20,7 @@
 
     <% @user.posts.each do |post| %>
      <div>
-        <div>
+        <div class="member_show">
           <img src="<%= "/user_images/#{post.user.image_name}" %>">
         </div>
         <div>
