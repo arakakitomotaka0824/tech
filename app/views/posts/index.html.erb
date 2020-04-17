@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-      <h1> post 一覧　</h1>
-       
-       <% @posts.each do |post| %>
-         <div>
-            ---------------------<br>
-            <div class="show_image">
+ <div>
+   <h1> post 一覧　</h1>
+   <div class ="post_index_box">
+      <% @posts.each do |post| %>
+        <div class="post_index">
+          <div class ="post_index_plofile">
+            <div class="post_index_img post_inline">
               <img src="<%= "/user_images/#{post.user.image_name}" %>">
-
             </div>
-            <%= link_to(post.title,"/posts/#{post.id}") %><br>
-            <%= post.content %> <br>
-            <%= post.created_at.to_s(:datetime_jp) %><br>
-            <%= time_ago_in_words(post.created_at) %>ago
-            
-         </div>
+            <div class ="post_index_name post_inline">
+              <%= link_to(post.user.name,"/users/#{post.user.id}") %>
+            </div>
+          </div>
+            <div class ="post_index_content">
+              <%= link_to(post.title,"/posts/#{post.id}") %><br>
+              <%= post.content %> <br>
+              <%= post.created_at.to_s(:datetime_jp) %><br> 
+            </div>
+        </div>
          <%end%>
-
-    </div>
-</body>
-</html>
+   </div>
+ </div>

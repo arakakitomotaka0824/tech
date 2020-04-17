@@ -62,15 +62,22 @@ ul{
     position: sticky;
     top: 65px;
     width: 175px;
-    height: 500px;
-    color: #fff;
-    background: #30b298;
+    height: 460px;
+    color: brown;
+    border: 5px solid #deb887;
+    background: #faf0e6;
     margin-right: 50px;
+    border-radius: 10px;
   }
 
  .home{
      display:block;
+     position: relative;/*←相対位置*/
+     padding-bottom: 30px;/*←footerの高さ*/
+     box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
  }
+
+
 
 
  header {
@@ -79,7 +86,8 @@ ul{
   z-index: 1;
   width: 100%;
   z-index: 1;
-  background-color: coral;
+  background-color: #faf0e6;
+  border-bottom: 5px solid #deb887;
 }
 
 .header-logo {
@@ -129,10 +137,13 @@ ul{
 
 
 footer {
-  margin-top: 45px;
+  margin-top: 10px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
+  
 }
 
 footer a {

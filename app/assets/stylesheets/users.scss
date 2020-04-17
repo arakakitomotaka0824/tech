@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+//users show 画面
 .member_show img {
     width: 40px;
     height: 40px;
@@ -11,11 +13,128 @@
     object-fit: cover;
   }
 
-.user_show img{
-  width: 80px;
-    height: 80px;
+.user_show_img img{
+  width: 110px;
+    height: 110px;
     border-radius: 100%;
     box-shadow: 0 2px 6px #c1ced7;
     margin: 20px 0 10px;
     object-fit: cover;
+}
+
+.user_show_img{
+  display:inline-block;
+}
+
+.user_show_content{
+  display: inline-block;
+  padding-left: 30px;
+}
+
+.user_show_name{
+  font-size: 40px;
+  display:inline-block;
+}
+
+.user_show_edit{
+  display:inline-block
+}
+
+
+.user-tabs {
+  margin-top: 40px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.user-tabs li {
+  float: left;
+}
+
+.user-tabs li.active {
+  border-bottom: 2px solid #deb887;
+}
+
+.user-tabs li.active a {
+  color: #57575f;
+}
+
+.user-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+}
+
+.post_show_index{
+  margin: 2em auto;
+  padding: 0 1em 1em 1em;
+  width: 100%;
+  color: #606060;
+  background-color: #faf0e6;
+  border: 2px solid #deb887;
+  border-radius: 10px;
+}
+
+.member_show{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  
+}
+
+.member_show_img{
+  display:inline-block;
+}
+
+.post-user-name{
+  display:inline-block;
+  font-size: 22px;
+  padding-top:15px;
+  padding-left: 25px;
+}
+
+
+//user index Page
+.user_index_box{
+  border: 2px solid #deb887;
+  border-radius: 10px;
+}
+
+.user_index{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  background-color: #faf0e6;
+  border: 2px solid #deb887;
+  border-radius: 10px;
+  padding: 10px 10px;
+  margin:30px 10px;
+}
+
+.index_inline{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.user_index_img img{
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
+  
+}
+
+.user_index_img{
+  display: inline-block;
+}
+
+.user_index_plofile{
+  display:inline-block;
+}
+
+.user_index_post{
+  display: inline-block;
 }

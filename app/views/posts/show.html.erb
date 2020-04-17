@@ -1,10 +1,30 @@
 
-<ul>
-    <img src="<%= "/user_images/#{@user.image_name}" %>">
-    <%= @user.name %>
+
+<div class = "post_show">
+
+    <div class = "post_show_plofile">
+      <div class = "post_show_img post_inline">
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+      </div>
+      <div class = "post_show_plofile_right post_inline">
+        <div class ="post_show_plofile_top">
+          <div class = "post_show_name post_inline">
+            <%= @user.name %>
+          </div>
+          <div class = "post_show_post post_inline">
+           投稿数<%= @user.posts.count %>
+          </div>
+         </div>
+      <div class = "post_show_show">
+             following<%= @user.following.count %>
+             followers<%= @user.followers.count %>
+       </div>
+    </div>
+    </div>
+   <ul>
       <li><%= @post.title %></li>
       <li><%= @post.content %></li>
-
+      
     <div class = "post-time">
       <li><%= @post.created_at.to_s(:datetime_jp) %></li>
       <li><%= time_ago_in_words(@post.created_at) %>ago</li>
@@ -29,3 +49,4 @@
       <%= @likes_count %>
       </li>
   </ul>
+  </>

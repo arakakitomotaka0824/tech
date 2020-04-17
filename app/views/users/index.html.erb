@@ -1,14 +1,18 @@
 <div>
 
-
+<div class ="user_index_box">
   <% @users.each do |user| %>
-   <div class ="user">
-    <img src="<%= "/user_images/#{user.image_name}" %>"><br>
-    <%= link_to(user.name, "/users/#{user.id}") %><br>
-    <%= user.email %><br>
-    投稿数<%= user.posts.count %>
-    <p>-------------------------------</p>
+   <div class ="user_index">
+       <div class ="user_index_img index_inline">
+         <img src="<%= "/user_images/#{user.image_name}" %>">
+       </div>
+       <div class ="user_index_plofile index_inline">
+         <%= link_to(user.name, "/users/#{user.id}") %>
+       </div>
+       <div class ="user_index_post index_inline">
+         投稿数<%= user.posts.count %> 
+       </div>   
     </div>
   <% end %>
-
+</div>
 </div>

@@ -2,33 +2,53 @@
   
   <div class = "user">
     <div class ="user_show">
-    <h1>
-      <img src="<%= "/user_images/#{@user.image_name}" %>"><br>
-      <%= @user.name %><br>
-      <%= @user.email %>
-    </h1>
-    </div>
+    
+      <div class ="user_show_img">
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+      </div>
+       <div class = "user_show_content">
+        <div class ="user_show_title">
+        <div class ="user_show_name">
+          <%= @user.name %>
+        </div>
+          <div class = "user_show_edit">
+          <% if @current_user == @user %>
+          <%= link_to("user編集","/users/#{@user.id}/edit") %>
+        <% end %>
+        <%= render 'follow_form' %>
+        </div>
+        </div>
+         <div class ="show_user_follow">
+         following<%= @user.following.count %>
+         followers<%= @user.followers.count %>
+         </div>
+         
+　    　
+       </div>
 
-    <%= render 'follow_form' %>
-　　<% if @current_user == @user %>
-      <%= link_to("user編集","/users/#{@user.id}/edit") %>
-    <% end %>
+
     <ul class="user-tabs">
-      <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
-      <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+      <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
     </ul>
-
+  
+  <div　class= "posts_index_item">
     <% @user.posts.each do |post| %>
-     <div>
-        <div class="member_show">
-          <img src="<%= "/user_images/#{post.user.image_name}" %>">
-        </div>
-        <div>
-          <%= link_to(post.user.name, "/users/#{post.user.id}") %>
-        </div>
-          <%= link_to(post.title, "/posts/#{post.id}") %>
-          <%= post.content %>
-     </div>
-     <% end %>
-
-  </div>
+        <div class = "post_show_index">
+             <div class="member_show">
+                <div class = "member_show_img">
+                  <img src="<%= "/user_images/#{post.user.image_name}" %>">
+                </div>    
+                <div class ="post-user-name">
+                  <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+                </div>
+             </div>
+             <div class = "post-user-content">
+                <%= link_to(post.title, "/posts/#{post.id}") %><br>
+                <%= post.content %><br>
+                <%= post.created_at.to_s(:datetime_jp) %><br>        
+             </div>  
+             </div>  
+    <% end %>
+    </div>
+</div>

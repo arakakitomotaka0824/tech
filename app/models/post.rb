@@ -7,5 +7,6 @@ class Post < ApplicationRecord
         return Member.find_by(id: self.user_id)
       end
       
+      
 
 end
