@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>edit画面</h1>
-    <%= form_tag("/posts/#{@post.id}/update") do %>
-    <input name = "title" value="<%= @post.title %>">
-    <textarea name="content"><%= @post.content %></textarea>
-    <input type="submit">
-    <%end%>
-</body>
-</html>
+<% provide(:title, 'Post edit') %>
+
+<div class = "post_submit_home">
+<h1>投稿編集画面です</h1>
+<%= form_tag("/posts/#{@post.id}/update") do %>
+ <div class = "post_title">
+    <h2>Title</h2>
+    
+      <input class ="post_new_title" type="text" name="title" value="<%= @post.title %>">
+    
+ </div>
+ <div class = "post_content">
+    <h2>Contents</h2>
+    
+      <textarea class = "post_new_content" name="content"><%= @post.content %></textarea>
+    
+ </div>
+  <input type="submit">
+  <%end%>
+</div>

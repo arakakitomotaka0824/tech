@@ -1,12 +1,20 @@
 <% provide(:title, 'Sign up') %>
 
-<div>
+<div class = "post_submit_home">
 <h1>投稿画面です</h1>
 <%= form_tag("/posts/create") do %>
-  <h2>Title</h2>
- <input type="text" name="title">
-  <h2>Contents</h2>
-  <textarea name="content"></textarea>
+ <div class = "post_title">
+    <h2>Title</h2>
+    
+      <input class ="post_new_title" type="text" name="title">
+    
+ </div>
+ <div class = "post_content">
+    <h2>Contents</h2>
+    
+      <textarea class = "post_new_content" name="content"></textarea>
+    
+ </div>
   <input type="submit">
   <%end%>
 </div>

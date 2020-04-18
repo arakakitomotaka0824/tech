@@ -39,6 +39,12 @@
 
 
 //post show Page
+.post_show{
+  border: 2px solid #deb887;
+  width:450px;
+  padding: 10px
+}
+
 .post_show_plofile{
   height: 150px;
   display: flex;
@@ -48,6 +54,72 @@
 .post_show_name{
   font-size: 40px;
 }
+
+.post_show_title{
+  font-size:27px;
+}
+
+.post_show_content{
+  padding-left: 10px;
+  padding-bottom: 30px;
+}
+
+.post_show_low{
+  float: right;
+}
+
+//post new Page
+.post_submit_home{
+  width:600px;
+  text-align: center;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.post_new_content {
+  border: 2px solid #f3dac1;  /* 枠線 */
+  border-radius: 0.67em;   /* 角丸 */
+  padding: 0.5em;          /* 内側の余白量 */
+  background-color: snow;  /* 背景色 */
+  width: 100%;             /* 横幅いっぱいにする */
+  box-sizing: border-box;  /* ※これがないと横にはみ出る */
+  height: 120px;           /* 高さ */
+  font-size: 18px;          /* 文字サイズ */
+  line-height: 1.2;        /* 行の高さ */
+  
+}
+
+.post_new_content:focus {
+  border-color: #deb887;   /* 枠線の色 */
+  background-color: #faf0e6;  /* 背景色 */
+  outline: none;           /* ※ブラウザが標準で付加する線を消したいとき */
+}
+
+.post_new_title {
+  border: 2px solid #f3dac1;  /* 枠線 */
+  border-radius: 0.67em;   /* 角丸 */
+  padding: 0.5em;          /* 内側の余白量 */
+  background-color: snow;  /* 背景色 */
+  width: 100%;             /* 横幅いっぱいにする */
+  box-sizing: border-box;  /* ※これがないと横にはみ出る */
+  height: 27pxpx;           /* 高さ */
+  font-size: 22px;          /* 文字サイズ */
+  line-height: 1.2;        /* 行の高さ */
+  
+}
+
+.post_new_title:focus {
+  border-color: #deb887;   /* 枠線の色 */
+  background-color: #faf0e6;  /* 背景色 */
+  outline: none;           /* ※ブラウザが標準で付加する線を消したいとき */
+}
+
+
+
+
+
 
 
 
