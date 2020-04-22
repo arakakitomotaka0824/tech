@@ -7,6 +7,18 @@ class Member < ApplicationRecord
    has_many :passive_relationships, class_name:  "Relationship",
                                     foreign_key: "followed_id",
                                     dependent:   :destroy  
+
+   has_many :active_guest, class_name:  "Team",
+                           foreign_key: "user_id",
+                           dependent:   :destroy
+
+  
+                          
+   has_many :guest, through: :active_guest
+   has_many :host, through: :passive_guest     
+                                    
+
+
     
     has_many :following, through: :active_relationships, source: :followed
     has_many :followers, through: :passive_relationships, source: :follower
@@ -20,6 +32,7 @@ class Member < ApplicationRecord
         return Post.where(user_id: self.id)
       end
 
+    
 
       def follow(other_user)
         following << other_user

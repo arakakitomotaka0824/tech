@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  get 'home/top'
   post  'users/:id/update'  => 'users#update'
   get   'users/:id/edit'    => 'users#edit'
   post  'users/create'      => 'users#create'
@@ -15,7 +16,15 @@ Rails.application.routes.draw do
 
   get   "users/:id/following" => "users#following"
 
+  post  "users/:id/team/create"        =>  "users#create_group"
+  get   "users/:id/team/new"           =>  "users#new_group"
+  get   "users/:id/team/:name/edit"    =>  "users#edit_group"
+  post  "users/:id/team/:name/update"  =>  "users#update_group"
+  post  "users/:id/team/:name/destroy" =>  "users#destroy_group"
 
+  get   "users/:id/team/:name/posts"   =>  "posts#team_posts"
+  get   "users/:id/team/:name/member"  => "users#team_member"
+  
   
   
 

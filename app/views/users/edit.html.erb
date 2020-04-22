@@ -2,13 +2,30 @@
 
   <div>
     <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
-      <h2>name</h2>
-       <input name="name" value="<%= @user.name %>">
-      <h2>email</h2>
-       <input name="email" value="<%= @user.email %>">
-       <h2>image</h2>
+       <h2>user name</h2>
+          <div class="cp_iptxt">
+           <input type="text" name="name" value="<%= @user.name %>">
+           <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+         </div>
+
+        <h2>user email</h2>
+        <div class="cp_iptxt">
+         <input type="text" name="email" value="<%= @user.email %>">
+         <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+         </div>
+
+        <h2>user password</h2>
+         <div class="cp_iptxt">
+         <input type="password" name="password">
+         <i class="fas fa-key fa-lg fa-fw" aria-hidden="true"></i>
+         </div>
+
+         <h2>image</h2>
        <input name="image" type="file">
-       <input type="submit">
+       
+
+         <input type="submit">
+       
     <% end %>
 
 

@@ -1,0 +1,28 @@
+
+<div>
+    <%= form_tag("/users/#{@user.id}/team/#{@group.team_name}/update",{multipart: true}) do %>
+       <h2>team name</h2>
+          <div class="cp_iptxt">
+           <input type="text" name="name" value="<%= @user.name %>">
+           <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+         </div>
+
+         <h2>guest name</h2>
+          <div class="cp_iptxt">
+           <input type="text" name="guest">
+           <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+         </div>
+
+
+
+         <h2>image</h2>
+       <input name="image" type="file">
+       
+
+         <input type="submit">
+       
+    <% end %>
+
+
+
+  </div>

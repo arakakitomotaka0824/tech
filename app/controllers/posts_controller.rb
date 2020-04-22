@@ -52,6 +52,20 @@ class PostsController < ApplicationController
     redirect_to("/posts/index")
   end
 
+  def team_posts
+    @user = Member.find(params[:id])
+    @team_name = params[:name]
+    @name = Team.where(team_name: params[:name]).where(user_id: @user.id)
+    @party = Party.find_by(team_name: params[:name])
+    @users = []
+    @posts_all = []
+    @name.each do |name| 
+      @posts_all << Post.where(user_id: name.guest_id)
+      @users << Member.find_by(id: name.guest_id)
+    end
+    
+  end
+
   def ensure_correct_user
     @post = Post.find_by(id: params[:id])
     if @post.user_id != @current_user.id

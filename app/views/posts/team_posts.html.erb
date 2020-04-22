@@ -1,0 +1,32 @@
+<div>
+   <h1> Group:<%= params[:name] %></h1>
+   <img src="<%= "/group_images/#{@party.image_name}" %>">
+   <h2>メンバー数：<%= @users.count %> </h2>
+
+   <ul class="user-tabs">
+      <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li><%= link_to("Member", "/users/#{@user.id}/team/#{@team_name}/member") %></li>
+    </ul>
+   <div class ="post_index_box">
+
+     <% @posts_all.each do |posts| %>
+      <% posts.each do |post| %>
+        <div class="post_index">
+          <div class ="post_index_plofile">
+            <div class="post_index_img post_inline">
+              <img src="<%= "/user_images/#{post.user.image_name}" %>">
+            </div>
+            <div class ="post_index_name post_inline">
+              <%= link_to(post.user.name,"/users/#{post.user.id}") %>
+            </div>
+          </div>
+            <div class ="post_index_content">
+              <%= link_to(post.title,"/posts/#{post.id}") %><br>
+              <%= post.content %> <br>
+              <%= post.created_at.to_s(:datetime_jp) %><br> 
+            </div>
+        </div>
+         <%end%>
+         <% end %>
+   </div>
+ </div>

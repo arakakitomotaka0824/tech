@@ -11,6 +11,7 @@
         <div class ="user_show_name">
           <%= @user.name %>
         </div>
+        
           <div class = "user_show_edit">
           <% if @current_user == @user %>
           <%= link_to("user編集","/users/#{@user.id}/edit") %>
@@ -21,6 +22,7 @@
          <div class ="show_user_follow">
          following<%= @user.following.count %>
          followers<%= @user.followers.count %>
+         <%= link_to("Team","/users/#{@user.id}/team") %>
          </div>
          
 　    　

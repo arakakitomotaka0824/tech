@@ -1,0 +1,30 @@
+<div>
+
+<h1> Group:<%= params[:name] %></h1>
+<img src="<%= "/group_images/#{@party.image_name}" %>">
+<h2>メンバー数：<%= @users.count %> </h2>
+
+<ul class="user-tabs">
+      <li><%= link_to("投稿", "/users/#{@user.id}/team/#{@team_name}/posts") %></li>
+      <li class="active"><%= link_to("Member", "/users/#{@user.id}/team/#{@team_name}/member") %></li>
+    </ul>
+
+<div class ="user_index_box">
+ 
+  <% @users.each do |user| %>
+   
+   <div class ="user_index">
+       <div class ="user_index_img index_inline">
+         <img src="<%= "/user_images/#{user.image_name}" %>">
+       </div>
+       <div class ="user_index_plofile index_inline">
+         <%= link_to(user.name, "/users/#{user.id}") %>
+       </div>
+       <div class ="user_index_post index_inline">
+         投稿数<%= user.posts.count %> 
+       </div>   
+    </div>
+    
+  <% end %>
+</div>
+</div>
