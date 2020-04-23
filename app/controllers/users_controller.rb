@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user = Member.find_by(id: params[:id])
+    @groups = Party.where(host_id: @user.id)
     
   end
 
@@ -101,12 +102,14 @@ class UsersController < ApplicationController
   def team_member
     @user = Member.find(params[:id])
     @team_name = params[:name]
-    @name = Team.where(team_name: params[:name]).where(user_id: @user.id)
+    @name = Team.where(team_name: @team_name)
+    @name = @name.pluck(:guest_id).uniq
     @party = Party.find_by(team_name: params[:name])
     @users = []
     @name.each do |name| 
-      @users << Member.find_by(id: name.guest_id)
+      @users << Member.find_by(id: name.to_i)
     end
+    
   end
 
   def new_group
@@ -117,17 +120,22 @@ class UsersController < ApplicationController
 
   def create_group
     @user = Member.find_by(params[:id])
+    @guests = Member.where.not(name: @user.id)
     @guest = Member.find_by(name: params[:guest])
+    
     @group = Party.new(
       team_name: params[:name],
+      host_id: @user.id,
       image_name: "default_group.jpg"
     )
+    
     @team = Team.new(
       user_id: @user.id,
       guest_id: @guest.id,
       team_name: @group.team_name
-    )
-    if @group.save 
+    )  
+        
+    if @group.save
       @team.save
       redirect_to("/users/#{@user.id}/team/#{@group.team_name}/posts")
     else
@@ -147,21 +155,20 @@ class UsersController < ApplicationController
     @group = Party.find_by(team_name: params[:name])
     @team = Team.find_by(team_name: params[:name])
 
-    if params[:guest]
-      @ttt = Team.new(
+    @ttt = Team.new(
         user_id: @user.id,
         guest_id: @guest.id,
         team_name: @group.team_name
       )
-    end
        
     if params[:image]
       @group.image_name = "#{@group.id}.jpg"
       image = params[:image]
       File.binwrite("public/group_images/#{@group.image_name}", image.read) 
+      @group.save
     end
-    if @group.save
-      @ttt.save
+  
+    if @ttt.save
       redirect_to("/users/#{@user.id}/team/#{@group.team_name}/posts")
     else
       render('users/edit_group')

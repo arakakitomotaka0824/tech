@@ -10,12 +10,16 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require select2
  *= require_tree .
  *= require_self
+ *= require_tree .
+
  */
 
 body{
   margin: 0;
+  background-color: #faf0e6;
 }
 
 ul{
@@ -143,7 +147,7 @@ footer {
   color: #777;
   position: absolute;/*←絶対位置*/
   bottom: 0; /*下に固定*/
-  
+  width:90%;
 }
 
 footer a {

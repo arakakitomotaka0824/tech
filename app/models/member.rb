@@ -32,6 +32,8 @@ class Member < ApplicationRecord
         return Post.where(user_id: self.id)
       end
 
+      
+
     
 
       def follow(other_user)

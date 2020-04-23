@@ -22,12 +22,16 @@
          <div class ="show_user_follow">
          following<%= @user.following.count %>
          followers<%= @user.followers.count %>
-         <%= link_to("Team","/users/#{@user.id}/team") %>
-         </div>
          
-　    　
+         </div>
        </div>
 
+      <% @groups.each do |group| %>
+        <%= link_to("/users/#{@user.id}/team/#{group.team_name}/posts") do %>
+          <img src="<%= "/group_images/#{group.image_name}" %>">
+        <% end %>
+        <%= group.team_name %>
+      <%end%>
 
     <ul class="user-tabs">
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>

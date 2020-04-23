@@ -56,12 +56,13 @@ class PostsController < ApplicationController
     @user = Member.find(params[:id])
     @team_name = params[:name]
     @name = Team.where(team_name: params[:name]).where(user_id: @user.id)
+    @name = @name.pluck(:guest_id).uniq
     @party = Party.find_by(team_name: params[:name])
     @users = []
     @posts_all = []
     @name.each do |name| 
-      @posts_all << Post.where(user_id: name.guest_id)
-      @users << Member.find_by(id: name.guest_id)
+      @posts_all << Post.where(user_id: name.to_i)
+      @users << Member.find_by(id: name.to_i)
     end
     
   end
