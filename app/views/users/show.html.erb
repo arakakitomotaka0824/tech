@@ -2,37 +2,46 @@
   
   <div class = "user user_show_home">
     <div class ="user_show">
-    
+     <div class = "user_account">
       <div class ="user_show_img">
         <img src="<%= "/user_images/#{@user.image_name}" %>">
       </div>
-       <div class = "user_show_content">
+      <div class = "user_show_content">
         <div class ="user_show_title">
-        <div class ="user_show_name">
-          <%= @user.name %>
-        </div>
-        
+          <div class ="user_show_name">
+            <%= @user.name %>
+          </div>
           <div class = "user_show_edit">
-          <% if @current_user == @user %>
-          <%= link_to("user編集","/users/#{@user.id}/edit") %>
-        <% end %>
-        <%= render 'follow_form' %>
+            <% if @current_user == @user %>
+              <%= link_to("user編集","/users/#{@user.id}/edit") %>
+            <% end %>
+              <%= render 'follow_form' %>
+          </div>
         </div>
-        </div>
-         <div class ="show_user_follow">
+        <div class ="show_user_follow">
          following<%= @user.following.count %>
          followers<%= @user.followers.count %>
-         
-         </div>
+        </div>
        </div>
-
+     </div>
+      <div class = "group_show">
+       <div class = "group_plus">
+       <%= link_to("/users/#{@user.id}/team/new") do %>
+         <i class="fas fa-plus"></i>
+       <% end %>
+       </div>
       <% @groups.each do |group| %>
+      <div class = "group_index_box">
+       <div class = "group_index_img">
         <%= link_to("/users/#{@user.id}/team/#{group.team_name}/posts") do %>
           <img src="<%= "/group_images/#{group.image_name}" %>">
         <% end %>
+        </div>
         <%= group.team_name %>
+        </div>
       <%end%>
-
+      </div>
+      
     <ul class="user-tabs">
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
       <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>

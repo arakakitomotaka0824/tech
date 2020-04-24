@@ -80,7 +80,7 @@ class UsersController < ApplicationController
   def likes
     @user = Member.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id)
-   
+    @groups = Party.where(host_id: @user.id)
   end
 
 

@@ -21,10 +21,25 @@
          following<%= @user.following.count %>
          followers<%= @user.followers.count %>
          </div>
-         
-　    　
        </div>
-
+       </div>
+      <div class = "group_show">
+      <div class = "group_plus">
+       <%= link_to("/users/#{@user.id}/team/new") do %>
+         <i class="fas fa-plus"></i>
+       <% end %>
+       </div>
+      <% @groups.each do |group| %>
+      <div class = "group_index_box">
+       <div class = "group_index_img">
+        <%= link_to("/users/#{@user.id}/team/#{group.team_name}/posts") do %>
+          <img src="<%= "/group_images/#{group.image_name}" %>">
+        <% end %>
+        </div>
+        <%= group.team_name %>
+        </div>
+      <%end%>
+      </div>
 
     <ul class="user-tabs">
       <li class =><%= link_to("投稿", "/users/#{@user.id}") %></li>
