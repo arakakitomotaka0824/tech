@@ -112,6 +112,14 @@
   padding-left: 25px;
 }
 
+.group_show{
+  height: 200px;
+  width:  600px;
+  white-space:nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+}
 .group_index_img img{
   width: 110px;
   height: 110px;
