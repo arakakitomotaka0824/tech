@@ -22,14 +22,12 @@ class PostsController < ApplicationController
                      content: params[:content],
                      user_id: @current_user.id)
      if @post.save
-          flash[:notice] = "post crear"
+          flash[:notice] = "post success title:#{@post.title}"
           redirect_to("/posts/index")
      else
           render 'new'
      end
   end
-
-  
 
   def edit
     @post = Post.find_by(id: params[:id])
@@ -40,6 +38,7 @@ class PostsController < ApplicationController
     @post.title = params[:title]
     @post.content = params[:content]
     if @post.save
+      flash[:notice] = "Post edit success title:#{@post.title}"
        redirect_to("/posts/index")
     else
       render("/posts/edit")

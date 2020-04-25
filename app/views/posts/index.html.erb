@@ -1,4 +1,4 @@
- <div>
+ <div class = "posts_box">
    <h1> post 一覧　</h1>
    <div class ="post_index_box">
       <% @posts.each do |post| %>
@@ -12,9 +12,15 @@
             </div>
           </div>
             <div class ="post_index_content">
-              <%= link_to(post.title,"/posts/#{post.id}") %><br>
-              <%= post.content %> <br>
-              <%= post.created_at.to_s(:datetime_jp) %><br> 
+              <div class = "team_post_title">
+                <%= link_to(post.title,"/posts/#{post.id}") %>
+              </div>
+              <div class = "team_post_content">
+                <%= post.content %>
+              </div>
+              <div class = "team_post_date">
+                <%= post.created_at.to_s(:datetime_jp) %>
+              </div>
             </div>
         </div>
          <%end%>

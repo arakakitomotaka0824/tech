@@ -1,13 +1,26 @@
-<div>
-   <h1> Group:<%= params[:name] %></h1>
-   <img src="<%= "/group_images/#{@party.image_name}" %>">
-   <h2>メンバー数：<%= @users.count %> </h2>
+<div class = "group_show">
 
-   <ul class="user-tabs">
-      <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
+<div class = "group_account">
+   <div class = group_show_img>
+      <img src="<%= "/group_images/#{@party.image_name}" %>">
+   </div>
+   <div class = "group_show_name">
+     <h1><%= params[:name] %></h1>
+   </div>
+   <div class = "group_member_count">
+     <h2>メンバー数：<%= @users.count %> </h2>
+   </div>
+   <div class = "group_edit_btn">
+     <%= link_to("グループ編集","/users/#{@user.id}/team/#{@party.team_name}/edit") %>
+   </div>
+</div>
+
+<ul class="user-tabs">
+      <li class = "active"><%= link_to("投稿", "/users/#{@user.id}/team/#{@team_name}/posts") %></li>
       <li><%= link_to("Member", "/users/#{@user.id}/team/#{@team_name}/member") %></li>
     </ul>
-   <div class ="post_index_box">
+
+<div class ="user_index_box">
 
      <% @posts_all.each do |posts| %>
       <% posts.each do |post| %>
@@ -21,9 +34,15 @@
             </div>
           </div>
             <div class ="post_index_content">
-              <%= link_to(post.title,"/posts/#{post.id}") %><br>
-              <%= post.content %> <br>
-              <%= post.created_at.to_s(:datetime_jp) %><br> 
+              <div class = "team_post_title">
+                <%= link_to(post.title,"/posts/#{post.id}") %>
+              </div>
+              <div class = "team_post_content">
+                <%= post.content %>
+              </div>
+              <div class = "team_post_date">
+                <%= post.created_at.to_s(:datetime_jp) %>
+              </div>
             </div>
         </div>
          <%end%>

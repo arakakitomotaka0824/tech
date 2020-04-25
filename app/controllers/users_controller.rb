@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     )
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "success signup"
+      flash[:notice] = "Success signup name:#{@user.name}"
       redirect_to("/users/#{@user.id}")
     else
       render('users/new')
@@ -53,6 +53,7 @@ class UsersController < ApplicationController
     end
 
     if @user.save
+      flash[:notice] = "Profile edit success name:#{@user.name}"
       redirect_to("/users/#{@user.id}")
     else
       render('users/edit')
@@ -66,6 +67,7 @@ class UsersController < ApplicationController
     @user = Member.find_by(email: params[:email],password: params[:password])
     if @user
       session[:user_id] = @user.id
+      flash[:notice] = "Login success name:#{@user.name}"
       redirect_to("/users/#{@user.id}")
     else
       render('users/login_form')
@@ -119,7 +121,7 @@ class UsersController < ApplicationController
   end
 
   def create_group
-    @user = Member.find_by(params[:id])
+    @user = Member.find_by(id: @current_user.id)
     @guests = Member.where.not(name: @user.id)
     @guest = Member.find_by(name: params[:guest])
     
@@ -137,6 +139,7 @@ class UsersController < ApplicationController
         
     if @group.save
       @team.save
+      flash[:notice] = "New group create name:#{@group.team_name}"
       redirect_to("/users/#{@user.id}/team/#{@group.team_name}/posts")
     else
       render("users/#{@user.id}")
@@ -169,6 +172,7 @@ class UsersController < ApplicationController
     end
   
     if @ttt.save
+      flash[:notice] = "Edit group name:#{@ttt.team_name}"
       redirect_to("/users/#{@user.id}/team/#{@group.team_name}/posts")
     else
       render('users/edit_group')

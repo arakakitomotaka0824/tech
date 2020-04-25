@@ -112,7 +112,7 @@
   padding-left: 25px;
 }
 
-.group_show{
+.group_show2{
   height: 200px;
   width:  600px;
   white-space:nowrap;
@@ -263,4 +263,50 @@
 	border-width: 0 3px 3px 3px;
 	border-style: solid;
 	border-color: #deb887;
+}
+
+//team_member Page
+.group_show{
+  margin: auto;
+  text-align: center;
+  width:60%;
+}
+
+.group_show_img img{
+  width: 230px;
+  height: 230px;
+  border-radius: 100%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
+}
+
+.group_account{
+  text-align: center;
+}
+
+.group_show_name{
+  font-size: 30px;
+}
+
+.group_member_count{
+  font-size: 23px;
+}
+
+.group_edit_btn{
+  font-size: 17px;
+}
+
+.group_show_name{
+  font-size: 30px;
+}
+
+.user_index_img img{
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
+  
 }

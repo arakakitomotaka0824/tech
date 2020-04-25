@@ -1,8 +1,19 @@
-<div>
+<div class = "group_show">
 
-<h1> Group:<%= params[:name] %></h1>
-<img src="<%= "/group_images/#{@party.image_name}" %>">
-<h2>メンバー数：<%= @users.count %> </h2>
+<div class = "group_account">
+   <div class = group_show_img>
+      <img src="<%= "/group_images/#{@party.image_name}" %>">
+   </div>
+   <div class = "group_show_name">
+     <h1><%= params[:name] %></h1>
+   </div>
+   <div class = "group_member_count">
+     <h2>メンバー数：<%= @users.count %> </h2>
+   </div>
+   <div class = "group_edit_btn">
+     <%= link_to("グループ編集","/users/#{@user.id}/team/#{@party.team_name}/edit") %>
+   </div>
+</div>
 
 <ul class="user-tabs">
       <li><%= link_to("投稿", "/users/#{@user.id}/team/#{@team_name}/posts") %></li>
@@ -14,13 +25,13 @@
   <% @users.each do |user| %>
    
    <div class ="user_index">
-       <div class ="user_index_img index_inline">
+       <div class ="user_index_img index_inline group_show_img">
          <img src="<%= "/user_images/#{user.image_name}" %>">
        </div>
-       <div class ="user_index_plofile index_inline">
+       <div class ="user_index_plofile index_inline group_show_name">
          <%= link_to(user.name, "/users/#{user.id}") %>
        </div>
-       <div class ="user_index_post index_inline">
+       <div class ="user_index_post index_inline group_show_postscount">
          投稿数<%= user.posts.count %> 
        </div>   
     </div>

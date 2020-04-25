@@ -20,6 +20,7 @@
 body{
   margin: 0;
   background-color: #faf0e6;
+  width: 100%;
 }
 
 ul{
@@ -50,7 +51,7 @@ ul{
 
  .content {
     display: flex;
-    padding: 80px 50px;
+    padding: 80px 50px 80px 0;
   }
 
   ul {
@@ -64,7 +65,7 @@ ul{
     justify-content: center;
     position: -webkit-sticky;
     position: sticky;
-    top: 65px;
+    top: 115px;
     width: 175px;
     height: 460px;
     color: brown;
@@ -72,6 +73,7 @@ ul{
     background: #faf0e6;
     margin-right: 50px;
     border-radius: 10px;
+    margin-left: 80px;
   }
 
  .home{
@@ -89,7 +91,7 @@ ul{
   position: fixed;
   z-index: 1;
   width: 100%;
-  z-index: 1;
+  z-index: 3;
   background-color: #faf0e6;
   border-bottom: 5px solid #deb887;
 }
@@ -172,5 +174,18 @@ footer ul li {
   margin-left: 15px;
 }
 
-
+/* flash */
+.flash {
+  padding: 10px 0;
+  color: white;
+  background: rgb(251, 170, 88);
+  text-align: center;
+  position: fixed;
+  top: 64px;
+  z-index: 1;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+  font-size: 25px;
+  font-weight: 700;
+}
 

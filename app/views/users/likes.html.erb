@@ -1,14 +1,13 @@
 <div class = "main user-show user_show_home">
-
-<div class ="user_show">
-    
+   <div class ="user_show">   
+    <div class = "user_account">
       <div class ="user_show_img">
         <img src="<%= "/user_images/#{@user.image_name}" %>">
       </div>
        <div class = "user_show_content">
         <div class ="user_show_title">
         <div class ="user_show_name">
-          <%= @user.name %>
+        <%= @user.name %>
         </div>
           <div class = "user_show_edit">
           <% if @current_user == @user %>
@@ -23,7 +22,7 @@
          </div>
        </div>
        </div>
-      <div class = "group_show">
+      <div class = "group_show2">
       <div class = "group_plus">
        <%= link_to("/users/#{@user.id}/team/new") do %>
          <i class="fas fa-plus"></i>
@@ -45,10 +44,9 @@
       <li class =><%= link_to("投稿", "/users/#{@user.id}") %></li>
       <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
     </ul>
-
+<div class= "posts_index_item">
  <% @likes.each do |like| %>
     <% post = Post.find_by(id: like.post_id) %>
-     <div class= "posts_index_item">
      <div class ="post_show_index">
       <div class="member_show">
         <div class = "member_show_img">
@@ -64,5 +62,6 @@
           <%= post.created_at.to_s(:datetime_jp) %>
         </div>
         </div>     
-      </div>
   <% end %>
+  </div>
+  </div>

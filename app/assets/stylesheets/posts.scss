@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //post index Page
+.posts_box{
+  width:90%;
+  text-align: center;
+}
+
 .post_index_img img{
     width: 50px;
     height: 50px;
@@ -40,9 +45,10 @@
 
 //post show Page
 .post_show{
-  border: 2px solid #deb887;
-  width:450px;
-  padding: 10px
+  
+  width:75%;
+  padding: 20px 20px 20px 50px;
+  text-align: center;
 }
 
 .post_show_plofile{
@@ -55,13 +61,55 @@
   font-size: 40px;
 }
 
+.post_show_like{
+  display: inline-block;
+  font-size: 30px;
+  position: relative;
+  top:10px;
+  right:-50px;
+}
+
+.good{
+  color:rgb(250, 43, 6);
+}
+
+.normal{
+  color: rgb(247, 206, 203);
+}
+
+.post_show_post_all{
+  padding-left: 40px;
+}
+
 .post_show_title{
   font-size:27px;
+  text-align: left;
+}
+
+.post_show_img img{
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
 }
 
 .post_show_content{
+  text-align: left;
   padding-left: 10px;
   padding-bottom: 30px;
+  font-size: 22px;
+}
+
+.post-time{
+  font-size: 22px;
+  font-weight: 900;
+  opacity:0.3; 
+}
+
+.post_show_show{
+  padding-left: 40px;
 }
 
 .post_show_low{
@@ -117,7 +165,69 @@ textarea {
 }
 
 
+// group post Page
+.group_show{
+  text-align: center;
+  width:100%;
+}
 
+.group_show_img img{
+  width: 230px;
+  height: 230px;
+  border-radius: 100%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
+}
+
+.group_account{
+  text-align: center;
+}
+
+.group_show_name{
+  font-size: 30px;
+}
+
+.group_member_count{
+  font-size: 23px;
+}
+
+.group_edit_btn{
+  font-size: 17px;
+}
+
+.group_show_name{
+  font-size: 30px;
+}
+
+.user_index_img img{
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
+  
+}
+
+.team_post_title{
+  font-size: 20px;
+  text-align: left;
+  padding-left: 30px;
+}
+
+.team_post_content{
+  font-size: 15px;
+  text-align: left;
+  padding-left: 40px;
+}
+
+.team_post_date{
+  font-size: 15px;
+  text-align: right;
+  font-weight: 900;
+  opacity:0.3; 
+}
 
 
 
