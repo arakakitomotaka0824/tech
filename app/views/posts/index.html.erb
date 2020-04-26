@@ -2,6 +2,15 @@
 
  <div class = "posts_box">
    <h1> post 一覧　</h1>
+
+   <div class = "serch_post">
+    <p>post title search</p>
+     <%= form_tag "/posts/index", :method => 'get' do %>
+       <%= text_field_tag :search, params[:search] %>
+       <%= submit_tag 'Search', :title => nil %>
+     <% end %>
+   </div>
+
    <div class ="post_index_box">
       <% @posts.each do |post| %>
         <div class="post_index">
