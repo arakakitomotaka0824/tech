@@ -1,3 +1,4 @@
+<% provide(:title, 'User show') %>
 <div class = "user user_show_home">
     <div class ="user_show">
      <div class = "user_account">
@@ -26,7 +27,9 @@
   <% if @current_user == @user %>
      <% if @groups.length == 0 %>
        <div class = "no_have_group">
-        <%= link_to("Groupを作る","/users/#{@user.id}/team/new") %>
+        <%= link_to("/users/#{@user.id}/team/new") do %>
+        <i class="fas fa-plus"></i>
+          <% end %>
         </div>
          
      <% else %>

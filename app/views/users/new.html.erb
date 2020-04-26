@@ -3,6 +3,13 @@
     <div>
       <h1>user signup</h1>
        <%= form_tag("/users/create") do %>
+
+       <div class = "error_message">
+         <% @user.errors.full_messages.each do |message| %>
+         <%= message %>
+         <% end %>
+       </div>
+
        
         <h2>user name</h2>
           <div class="cp_iptxt">

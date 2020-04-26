@@ -17,3 +17,6 @@
 //= require select2
 //= require turbolinks
 //= require_tree .
+jQuery(function () {
+    　　$(".flash").fadeOut( 4000 );
+    });

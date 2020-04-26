@@ -1,7 +1,14 @@
+<% provide(:title, 'Group create') %>
 
 <div>
       <h1>user signup</h1>
        <%= form_tag("/users/#{@user.id}/team/create") do %>
+
+       <div class = "error_message">
+         <% @team.errors.full_messages.each do |message| %>
+         <%= message %>
+         <% end %>
+       </div>
        
         <h2>group name</h2>
           <div class="cp_iptxt">

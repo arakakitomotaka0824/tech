@@ -1,18 +1,24 @@
-
+<% provide(:title, 'Login') %>
 
     <div>
       <h1>Login</h1>
       <%= form_tag("/users/login") do %>
+
+      <% if @error_message %>
+          <div class="error_message">
+            <%= @error_message %>
+          </div>
+        <% end %>
       
         <h2>user email</h2>
         <div class="cp_iptxt">
-         <input type="text" name="email">
+         <input type="text" name="email" value="<%= @email %>">
          <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
          </div>
 
          <h2>user password</h2>
          <div class="cp_iptxt">
-         <input type="password" name="password">
+         <input type="password" name="password" value="<%= @password %>">
          <i class="fas fa-key fa-lg fa-fw" aria-hidden="true"></i>
          </div>
 

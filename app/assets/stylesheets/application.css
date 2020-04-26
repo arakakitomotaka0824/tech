@@ -189,3 +189,13 @@ footer ul li {
   font-weight: 700;
 }
 
+/* error message */
+ .error_message{
+   width:100%;
+   background-color: rgb(247, 125, 149);
+   text-align: center;
+   border: 3px solid  crimson;
+   border-radius: 20px;
+   padding: 30px 15px;
+   color: floralwhite;
+ }

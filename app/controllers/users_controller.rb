@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
-  before_action :forbid_login_user, {only: [:new, :create, :login_form, :login,
-                                            ]}
-  before_action :ensure_correct_user, {only: [:edit, :update]}
-
+  before_action :authenticate_user, {only: [:index, :show, :edit, :update, :likes, :folloeing, :followers, :team_member, :new_group, 
+                                            :create_group, :edit_group, :update_group, :destroy_group]}
+  before_action :forbid_login_user, {only: [:new, :create, :login_form, :login, ]}
+  before_action :ensure_group_user, {only: [:team_member, :new_group, :create_group, :edit_group, :update_group, :destroy_group]}
 
   def index
     @users = Member.all
@@ -70,6 +69,9 @@ class UsersController < ApplicationController
       flash[:notice] = "Login success name:#{@user.name}"
       redirect_to("/users/#{@user.id}")
     else
+      @error_message = "メールアドレスまたはパスワードが間違っています"
+      @email = params[:email]
+      @password = params[:password]
       render('users/login_form')
     end
   end
@@ -179,7 +181,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy_group
     @user = Member.find_by(id: params[:id])
     @group = Party.find_by(team_name: params[:name])
     @team = Team.where(team_name: params[:name])
@@ -199,6 +201,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def ensure_group_user
+    if @current_user.id != params[:id].to_i
+      flash[:notice] = "権限がありません"
+      redirect_to("/users/#{@user.id}")
+    end
+  end
   
 
 
