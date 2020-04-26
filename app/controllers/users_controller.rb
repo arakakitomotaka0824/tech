@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :ensure_group_user, {only: [:team_member, :new_group, :create_group, :edit_group, :update_group, :destroy_group]}
 
   def index
-    @users = Member.all
+    @users = Member.search(params[:search])
   end
 
   def show

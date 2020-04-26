@@ -2,6 +2,14 @@
 
 <div>
 
+<div class = "serch_user">
+<p>user search</p>
+<%= form_tag users_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+</div>
+
 <div class ="user_index_box">
   <% @users.each do |user| %>
    <div class ="user_index">
