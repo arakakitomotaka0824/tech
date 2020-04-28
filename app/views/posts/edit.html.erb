@@ -4,11 +4,13 @@
 <h1>投稿編集画面です</h1>
 <%= form_tag("/posts/#{@post.id}/update") do %>
 
+<% unless @post.errors.full_messages.empty? %>
 <div class = "error_message">
    <% @post.errors.full_messages.each do |message| %>
     <%= message %>
     <% end %>
   </div>
+  <% end %>
 
  <div class = "post_title">
     <h2>Title</h2>

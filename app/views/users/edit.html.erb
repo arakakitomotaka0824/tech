@@ -3,11 +3,13 @@
   <div>
     <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
 
+     <% unless @user.errors.full_messages.empty? %>
        <div class = "error_message">
          <% @user.errors.full_messages.each do |message| %>
-         <%= message %>
+           <%= message %><br>
          <% end %>
        </div>
+     <% end %>
 
        <h2>user name</h2>
           <div class="cp_iptxt">
