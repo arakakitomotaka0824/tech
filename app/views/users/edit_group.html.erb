@@ -3,11 +3,13 @@
 <div>
     <%= form_tag("/users/#{@user.id}/team/#{@group.team_name}/update",{multipart: true}) do %>
 
+      <% unless @team.errors.full_messages.empty? %>
       <div class = "error_message">
          <% @team.errors.full_messages.each do |message| %>
          <%= message %>
          <% end %>
        </div>
+       <% end %>
 
        <h2>team name</h2>
           <div class="cp_iptxt">
