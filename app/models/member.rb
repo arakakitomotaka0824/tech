@@ -1,5 +1,5 @@
 class Member < ApplicationRecord
-  has_secure_password
+  
 
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
@@ -26,8 +26,9 @@ class Member < ApplicationRecord
 
     validates :name, {presence: true}
     validates :email, {presence: true, uniqueness: true}
+    
+    has_secure_password
     validates :password, {presence: true}
-
 
     def posts
         return Post.where(user_id: self.id)
