@@ -1,7 +1,7 @@
 <% provide(:title, 'Group edit') %>
 
 <div>
-    <%= form_tag("/users/#{@user.id}/team/#{@group.team_name}/update",{multipart: true}) do %>
+    <%= form_tag("/users/#{@user.id}/team/#{@team.team_name}/update",{multipart: true}) do %>
 
       <% unless @team.errors.full_messages.empty? %>
       <div class = "error_message">

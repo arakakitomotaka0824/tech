@@ -158,9 +158,9 @@ class UsersController < ApplicationController
     @user = Member.find_by(id: params[:id])
     @guest = Member.find_by(name: params[:guest])
     @group = Party.find_by(team_name: params[:name])
-    @team = Team.find_by(team_name: params[:name])
+    
 
-    @ttt = Team.new(
+    @team = Team.new(
         user_id: @user.id,
         guest_id: @guest.id,
         team_name: @group.team_name
@@ -173,8 +173,8 @@ class UsersController < ApplicationController
       @group.save
     end
   
-    if @ttt.save
-      flash[:notice] = "Edit group name:#{@ttt.team_name}"
+    if @team.save
+      flash[:notice] = "Edit group name:#{@team.team_name}"
       redirect_to("/users/#{@user.id}/team/#{@group.team_name}/posts")
     else
       render('users/edit_group')

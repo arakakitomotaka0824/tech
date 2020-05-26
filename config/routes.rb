@@ -18,8 +18,9 @@ Rails.application.routes.draw do
 
   post  "users/:id/team/create"        =>  "users#create_group"
   get   "users/:id/team/new"           =>  "users#new_group"
-  get   "users/:id/team/:name/edit"    =>  "users#edit_group"
   post  "users/:id/team/:name/update"  =>  "users#update_group"
+  get   "users/:id/team/:name/edit"    =>  "users#edit_group"
+  
   post  "users/:id/team/:name/destroy" =>  "users#destroy_group"
 
   get   "users/:id/team/:name/posts"   =>  "posts#team_posts"

@@ -1,0 +1,15 @@
+current directory: /mnt/c/Users/新垣　友崇/techtrain1_app/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+/home/codebase/.rbenv/versions/2.6.5/bin/ruby -I /home/codebase/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20200526-532-beilpd.rb extconf.rb
+creating Makefile
+
+current directory: /mnt/c/Users/新垣　友崇/techtrain1_app/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /mnt/c/Users/新垣　友崇/techtrain1_app/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /mnt/c/Users/新垣　友崇/techtrain1_app/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20200526-532-1c78k45/skiptrace/internal
